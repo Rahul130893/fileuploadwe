@@ -32,18 +32,7 @@ router.post("", uploads.single("profilePic"), async(req, res)=>{ //to see the up
 })
 
 
-router.patch(":id", async(req, res)=>{ //to see the uploads middleware go to documentation and select 
-    try {
-        // console.log(req.body)
-        // console.log(req.file)
-        const user= await User.findByIdAndUpdate(
-            req.params.id, req.body, {new :true}
-        )
-        return res.status(201).send(user)
-    } catch (error) {
-        return res.status(500).send({message: error.message})
-    }
-})
+
 
 
 
